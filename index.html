@@ -16,6 +16,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" href="./css/main.min.css">
     <title>Web Studio</title>
 </head>
@@ -86,8 +88,8 @@
         <section class="section features">
             <div class="container">
                 <h2 class="visually-hidden">Особливості</h2>
-                <ul class="features__row">
-                    <li class="features__body">
+                <div class="features__row slider">
+                    <div class="features__body">
                         <div class="features__bgc-img">
                             <svg width="70" height="70" class="features__body-img">
                                 <use href="./img/icons.svg#icon-attention_to_details"></use>
@@ -96,8 +98,8 @@
                         <h3 class="features__title">УВАГА ДО ДЕТАЛЕЙ</h3>
                         <p class="features__text">Ідейні міркування, і навіть початок повсякденної роботи з
                             формування позиції.</p>
-                    </li>
-                    <li class="features__body">
+                    </div>
+                    <div class="features__body">
                         <div class="features__bgc-img">
                             <svg width="70" height="70" class="features__body-img">
                                 <use href="./img/icons.svg#icon-punctuality"></use>
@@ -107,8 +109,8 @@
                         <p class="features__text">Завдання організації, особливо рамки і місце навчання кадрів
                             тягне
                             у себе.</p>
-                    </li>
-                    <li class="features__body">
+                    </div>
+                    <div class="features__body">
                         <div class="features__bgc-img">
                             <svg width="70" height="70" class="features__body-img">
                                 <use href="./img/icons.svg#icon-planning"></use>
@@ -117,8 +119,8 @@
                         <h3 class="features__title">ПЛАНУВАННЯ</h3>
                         <p class="features__text">Так само консультація з широким активом значною мірою зумовлює.
                         </p>
-                    </li>
-                    <li class="features__body">
+                    </div>
+                    <div class="features__body">
                         <div class="features__bgc-img">
                             <svg width="70" height="70" class="features__body-img">
                                 <use href="./img/icons.svg#icon-modern_technology"></use>
@@ -127,8 +129,28 @@
                         <h3 class="features__title">СУЧАСНІ ТЕХНОЛОГІЇ</h3>
                         <p class="features__text">Значимість цих проблем настільки очевидна, що реалізація планових
                             завдань.</p>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="features__body">
+                        <div class="features__bgc-img">
+                            <svg width="70" height="70" class="features__body-img">
+                                <use href="./img/icons.svg#icon-planning"></use>
+                            </svg>
+                        </div>
+                        <h3 class="features__title">ПЛАНУВАННЯ</h3>
+                        <p class="features__text">Так само консультація з широким активом значною мірою зумовлює.
+                        </p>
+                    </div>
+                    <div class="features__body">
+                        <div class="features__bgc-img">
+                            <svg width="70" height="70" class="features__body-img">
+                                <use href="./img/icons.svg#icon-modern_technology"></use>
+                            </svg>
+                        </div>
+                        <h3 class="features__title">СУЧАСНІ ТЕХНОЛОГІЇ</h3>
+                        <p class="features__text">Значимість цих проблем настільки очевидна, що реалізація планових
+                            завдань.</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section work-img">
@@ -165,7 +187,11 @@
                             alt="фото Ігоря Дем'яненко">
                         <div class="team__body">
                             <h3 class="team__title">Ігор Дем'яненко</h3>
-                            <p lang="en" class="team__job-title">Product Designer</p>
+                            <div class="text-scroll">
+                                <p lang="en" class="team__job-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque praesentium, a eveniet facere dolorem et aut cupiditate deserunt iste non atque sapiente sint officiis aliquid mollitia voluptatibus illo blanditiis impedit.
+                                Beatae ipsum praesentium expedita amet vel perferendis, voluptatum distinctio suscipit dolores repellat perspiciatis consectetur sunt, nisi quos. Voluptates, minima pariatur nihil explicabo consectetur molestiae cupiditate minus ratione magnam nulla ipsam.
+                                Laudantium maxime quod ipsa repudiandae, quas officia beatae quisquam, amet eum dicta qui facere provident repellendus eveniet dolore vero excepturi exercitationem quasi blanditiis. Officiis debitis recusandae vero a optio reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur maiores ex sint, inventore ducimus quis rerum doloribus officia dolor sed vero. Similique id blanditiis sed natus minus neque quibusdam ducimus.</p>
+                            </div>
                             <ul class="social-list">
                                 <li class="social-list__item"><a class="social-list__link" aria-label="Інстаграм"
                                         href="#" target="_blank"><svg width="20" height="20" class="social-list__icon">
@@ -423,13 +449,78 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/modal.js">
     </script>
     <script src="./js/wow.min.js"></script>
     <script>
         var wow = new WOW();
         wow.init();
+
+        $(document).ready(function(){
+            $('.slider').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: true,
+                infinite: true,
+                prevArrow:"<button type='button' class='slick-prev pull-left'>попередня</button>",
+                nextArrow:"<button type='button' class='slick-next pull-right'>наступна</button>"
+            });
+
+            $(window).on("load",function(){
+                $(".text-scroll").mCustomScrollbar({
+                    theme:"rounded-dark"
+                });
+            });
+        });
     </script>
+    <style>
+        .text-scroll {
+            height:100px;
+        }
+        .features {
+            position: relative;
+        }
+        .slick-prev,
+        .slick-next  {
+            position: absolute;
+            width:100px;
+            height: 50px;
+            top:10px;
+            left:-130px;
+            
+        }
+        .slick-next {
+            left:auto;
+            right:-130px;
+        }
+        .features__row {
+            margin: 0 -15px;
+        }
+        .features__body {
+            margin: 0 15px;
+        }
+        .slick-dots {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:10px;
+        }
+        .slick-dots li button {
+            width:20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: gray;
+            text-indent: -999px;
+            overflow: hidden;
+        }
+        .slick-dots li.slick-active button {
+            background-color: #2196f3;
+        }
+    </style>
 </body>
 
 </html>
