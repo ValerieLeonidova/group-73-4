@@ -11,6 +11,11 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+
+        <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="./css/main.min.css">
     <title>Web Studio</title>
 </head>
@@ -19,7 +24,7 @@
     <header class="header">
         <div class="container">
             <nav class="header-nav">
-                <a class="my-logo" href="./"><span class="my-logo--blue">Web</span>Studio</a>
+                <a class="my-logo animate__animated animate__bounce" href="./"><span class="my-logo--blue">Web</span>Studio</a>
                 <button class="header-nav__button 
                 js-open-menu" aria-expanded="false" type="button">
                     <svg class="header-nav__svg" width="40" height="40" aria-label="Мобільне меню">
@@ -128,8 +133,8 @@
         </section>
         <section class="section work-img">
             <div class="container">
-                <h2 class="title">Чим ми займаємося</h2>
-                <ul class="work-img-list__row">
+                <h2 class="title  animate__animated animate__slideInLeft wow" data-wow-duration="3s" data-wow-delay="3s" data-wow-offset="100">Чим ми займаємося</h2>
+                <ul class="work-img-list__row wow animate__animated animate__slideInUp" data-wow-offset="200">
                     <li class="work-img-list__item">
                         <div class="work-img-list__item-bg"><img class="work-img__img" src="./img/box_1.jpg" width="370"
                                 alt="робота за кодом">
@@ -419,6 +424,11 @@
         </div>
     </footer>
     <script src="./js/modal.js">
+    </script>
+    <script src="./js/wow.min.js"></script>
+    <script>
+        var wow = new WOW();
+        wow.init();
     </script>
 </body>
 
